@@ -1,6 +1,20 @@
+@font-face {
+    font-family: 'MetallicA OLD';
+    src: url('../fonts/MetallicAOLD.eot');
+    src: url('../fonts/MetallicAOLD.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/MetallicAOLD.woff2') format('woff2'),
+        url('../fonts/MetallicAOLD.woff') format('woff'),
+        url('../fonts/MetallicAOLD.ttf') format('truetype'),
+        url('../fonts/MetallicAOLD.svg#MetallicAOLD') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     font-size: 1px;
 }
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -67,13 +81,48 @@ div {
     padding: 150rem 10rem;
 }
 
+.metal {
+    position: relative;
+    top: 10rem;
+    font-family: 'MetallicA OLD';
+}
+
+.writting-metal {
+    transform: rotateY(180deg);
+}
+
 .name1 span {
     color: #050303;
     display: inline-block;
-    color: #aa8770;
     opacity: 0;
     transform: translate(0, -100px) rotate(360deg) scale(0);
     animation: revolveDrop 3s forwards;
+}
+
+.name1 .metal1 {
+    transform: translateX(0);
+    animation: metal1 5s forwards;
+    animation-delay: 5s;
+}
+
+@keyframes metal1 {    
+    100% {
+        transform: translateX(-60px);
+    }
+}
+
+.writting-metal {
+    transform: translateX(0) rotateY(180deg);
+    animation: writtingmetal 5s forwards;
+    animation-delay: 5s;
+}
+
+
+@keyframes writtingmetal {
+    100% {
+        transform: translateX(60px) rotateY(180deg);
+    }
+
 }
 
 .name1 span:nth-of-type(2) {
@@ -96,11 +145,11 @@ div {
 	0% {
 		transform: translate(0, -50px) rotate(180deg) scale(.5);
 	}
-
+    
 	60% {
-		transform: translate(0, 0) scale(1) rotate(0deg);
+        transform: translate(0, 0) scale(1) rotate(0deg);
 	}
-
+    
 	100% {
 		transform: translate(0) scale(2) rotate(0deg);
 		opacity: 1;
@@ -363,7 +412,7 @@ div {
 
 @media screen and (min-width: 728px) {
     .name1 p {
-        margin: 70rem 0 0;
+        margin: 70rem 10rem 0;
         padding: 0 10rem;
     }
 
